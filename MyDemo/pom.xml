@@ -135,8 +135,6 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.9.1</version>
     </dependency>
-
-
     <!--    spring-mybatis整合-->
     <!--mybatis-dbcp-->
     <dependency>
