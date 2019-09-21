@@ -46,9 +46,6 @@
         <property name="username" value="JX190313"/>
         <property name="password" value="123"/>
     </bean>
-
-
-
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="myDataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
