@@ -37,7 +37,6 @@
 <!--    </bean>-->
     <context:component-scan base-package="com.soft"></context:component-scan>
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
-
     <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -46,12 +45,14 @@
         <property name="username" value="JX190313"/>
         <property name="password" value="123"/>
     </bean>
+
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="myDataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
     <!--    mapper-->
     <!-- 配置MapperScannerConfigurer -->
+
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.soft.mapper"/>
     </bean>
