@@ -7,16 +7,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" import="com.soft.entity.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%String path = request.getContextPath()+"/"; %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <head>
     <meta charset="utf-8">
     <title>layui</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="<%=path%>layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="<%=basePath%>platform/layui/css/layui.css"  media="all">
     <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
-    <script type="text/javascript" src="<%=path%>platform/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>platform/js/jquery.min.js"></script>
 
 </head>
 <body>
@@ -69,7 +72,7 @@
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
 </script>
 
-<script src="<%=path%>layui/layui.js" charset="utf-8"></script>
+<script src="<%=basePath%>platformlayui/layui.js" charset="utf-8"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
     layui.use('table', function(){
@@ -77,14 +80,14 @@
 
         table.render({
             elem: '#test'
-            ,url: '<%=path%>shen/queryall.action'
+            ,url: '<%=basePath%>shen/queryall.action'
             ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
             ,id: 'testReload'
             ,page: true
             ,cols: [[
-                {field:'uname', title: '园所编号' }
+                {field:'sid', title: '园所编号' }
                 ,{field:'uname', title: '园所名称' }
-                ,{field:'uname', title: '账户' }
+                ,{field:'sname', title: '账户' }
                 ,{field:'utime', title: '审批时间' }
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
             ]]

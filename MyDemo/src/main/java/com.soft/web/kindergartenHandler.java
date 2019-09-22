@@ -25,16 +25,9 @@ public class kindergartenHandler {
     @RequestMapping(value = "/find.action", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
     public @ResponseBody
     Map find(String qapplytime, String qapplytime2, String qstate, String qname, int page, int limit) {
-        System.out.println(qapplytime);
-        System.out.println(qapplytime2);
-        System.out.println(qstate);
-        System.out.println(qname);
-        System.out.println(page);
-        System.out.println(limit);
         qualify.setQapplytime(qapplytime);
         qualify.setQapplytime2(qapplytime2);
         if ((null != qstate) && (!"".equals(qstate))) {
-            System.out.println("============");
             int state = Integer.parseInt(qstate);
             qualify.setQstate(state);
         }
@@ -43,7 +36,6 @@ public class kindergartenHandler {
         qualify.setLimit(limit);
         List list = kindergartenBiz.findall(qualify);
         List count = kindergartenBiz.count(qualify);
-        System.out.println("pp" + count.size());
         map.put("code", 0);
         map.put("count", count.size());
         map.put("data", list);
