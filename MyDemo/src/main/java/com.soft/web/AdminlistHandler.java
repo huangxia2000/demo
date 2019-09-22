@@ -22,7 +22,7 @@ public class AdminlistHandler {
     @RequestMapping("/index.action")
     public ModelAndView find(){
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("index");
+        mav.setViewName("platform/index");
         return mav;
     }
 

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.soft.mapper.KindergartenMapper">
+
+<!--    分页-->
+    <select id="findall"  resultType="com.soft.entity.Tblqualify">
+      select * from Tblqualify where 1=1
+        <if test="(qapplytime!=null and qapplytime neq'') and (qapplytime2!=null and qapplytime2 neq'')">
+            and qapplytime between #{qapplytime} and  #{qapplytime2}
+        </if>
+        <if test="qstate!=null and qstate neq''">
+            and qstate = #{qstate}
+        </if>
+        <if test="qname!=null and qname neq''">
+            and qname like concat('%',#{qname},'%')
+        </if>
+            limit #{page},#{limit}
+    </select>
+<!--    查询总条数-->
+    <select id="count"  resultType="com.soft.entity.Tblqualify">
+        select * from Tblqualify where 1=1
+        <if test="(qapplytime!=null and qapplytime neq'') and (qapplytime2!=null and qapplytime2 neq'')">
+            and qapplytime between #{qapplytime} and  #{qapplytime2}
+        </if>
+        <if test="qstate!=null and qstate neq''">
+            and qstate = #{qstate}
+        </if>
+        <if test="qname!=null and qname neq''">
+            and qname like concat('%',#{qname},'%')
+        </if>
+    </select>
+<!--园所审批-->
+    <select id="findByqno"  resultType="com.soft.entity.Tblqualify">
+        select * from Tblqualify where qno = #{qno}
+    </select>
+    <update id="updBystate" parameterType="com.soft.entity.Tblqualify">
+        update Tblqualify set qstate = #{qstate},qapprovetime = #{qapprovetime} where qno = #{qno}
+    </update>
+</mapper>
+
+	
