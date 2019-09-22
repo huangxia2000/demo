@@ -22,7 +22,11 @@
 		
 		<!-- 设置视图解析器 -->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<<<<<<< HEAD
 		    <property name="prefix" value="/"></property>
+=======
+		    <property name="prefix" value="/platform/"></property>
+>>>>>>> origin/zejing
 		    <property name="suffix" value=".jsp"></property>
 		</bean>
 		
