@@ -8,11 +8,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
   <display-name>Archetype Created Web Application</display-name>
   <welcome-file-list>
-<<<<<<< HEAD
-    <welcome-file>index.jsp</welcome-file>
-=======
     <welcome-file>platform/index.jsp</welcome-file>
->>>>>>> origin/zejing
   </welcome-file-list>
 
   <listener>

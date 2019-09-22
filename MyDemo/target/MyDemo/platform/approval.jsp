@@ -177,8 +177,6 @@
             data:{qno: qno,
                 qstate: state},
             success : function(res){
-                alert("vvvv")
-                alert(res);
                 //执行重载
                 table.reload('testReload', {
 
