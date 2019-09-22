@@ -91,7 +91,7 @@
             //console.log(obj)
             if(obj.event === 'edit'){
                 //进入审批弹窗界面
-              com(data.qno);
+              com(data.qno,data.qstate);
             }
         });
         var $ = layui.$, active = {
@@ -116,7 +116,7 @@
         };
 
     //ajax返回return的
-    function com(qno) {
+    function com(qno,qstate) {
         $.ajax({
             url:"<%=basePath%>kindergarten/qon.action",
             type: "POST",
@@ -157,12 +157,16 @@
                         '</div>'
                     ,btn1: function(index, layero){
                        //审批通过
-                        approval(qno,2);
+                        if(qstate!=2){
+                            approval(qno,2);
+                        }
                         layer.close(index);
                         }
                    ,btn2: function(index, layero){
                         //审批未通过
-                        approval(qno,3);
+                        if(qstate!=2){
+                            approval(qno,3);
+                        }
                    }
                 });
 
