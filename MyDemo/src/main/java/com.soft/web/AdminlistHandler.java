@@ -1,7 +1,6 @@
 package com.soft.web;
 
 import com.soft.biz.UserBiz;
-import com.soft.entity.TblAdmin;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
