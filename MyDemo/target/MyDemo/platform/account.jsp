@@ -85,9 +85,9 @@
             ,id: 'testReload'
             ,page: true
             ,cols: [[
-                {field:'uname', title: '园所编号' }
+                {field:'sid', title: '园所编号' }
                 ,{field:'uname', title: '园所名称' }
-                ,{field:'uname', title: '账户' }
+                ,{field:'sname', title: '账户' }
                 ,{field:'utime', title: '审批时间' }
                 ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
             ]]
